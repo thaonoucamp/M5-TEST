@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Edit Book</h1>
+
+  <form [formGroup]="bookForm">
+    <div class="form-group">
+      <label>Id</label>
+      <input type="number" class="form-control" formControlName="id" readonly>
+    </div>
+    <div class="form-group">
+      <label>Title</label>
+      <input type="text" class="form-control" formControlName="title">
+      <p *ngIf="!bookForm.get('title')?.valid && bookForm.get('title')?.touched" style="color: red">Title toi thieu 1 ky tu</p>
+    </div>
+    <div class="form-group">
+      <label>Author:</label>
+      <input type="text" class="form-control" formControlName="author">
+      <p *ngIf="!bookForm.get('author')?.valid && bookForm.get('author')?.touched" style="color: red">Author toi thieu 3 ky tu</p>
+    </div>
+    <div class="form-group">
+      <label>Description:</label>
+      <input type="text" class="form-control" formControlName="description">
+      <p *ngIf="!bookForm.get('description')?.valid && bookForm.get('description')?.touched" style="color: red">Description toi thieu 6 ky tu</p>
+    </div>
+    <button type="submit" (click)="saveBook()" class="btn btn-primary">Submit</button>
+  </form>
+</div>
